@@ -1,6 +1,7 @@
-# System files
-.DS_Store
-Thumbs.db
+# Generated files
+target/
+
+
 
 # Editor files
 *.swp
@@ -9,3 +10,14 @@ Thumbs.db
 .idea/
 .fleet/
 .vscode/
+
+
+
+# System files
+.DS_Store
+Thumbs.db
+
+
+
+# Miscellaneous files
+/documentation/
