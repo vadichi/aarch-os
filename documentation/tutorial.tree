@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="tutorial"
+                 name="aarch-os"
+                 start-page="tutorial.md">
+
+    <toc-element topic="welcome.topic"/>
+
+    <toc-element topic="docs.md"/>
+
+    <toc-element topic="tutorial.md">
+        <toc-element topic="tutorial-01.md"/>
+    </toc-element>
+</instance-profile>

@@ -10,7 +10,7 @@ permissions:
   pages: write
 
 env:
-  INSTANCE: 'documentation/writerside/aarch-os'
+  INSTANCE: 'documentation/aarch-os'
   ARTIFACT: 'webHelpAARCH-OS2-all.zip'
   DOCKER_VERSION: '233.14938'
 

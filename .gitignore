@@ -18,8 +18,3 @@ target/
 # System files
 .DS_Store
 Thumbs.db
-
-
-
-# Miscellaneous files
-/documentation/
