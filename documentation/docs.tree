@@ -4,7 +4,7 @@
 
 <instance-profile id="docs"
                  name="aarch-os"
-                 start-page="tutorial.md">
+                  start-page="welcome.topic">
 
     <toc-element topic="welcome.topic"/>
 
