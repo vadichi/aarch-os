@@ -1,10 +1,6 @@
 # aarch-os
 
-> A simple aarch (ARMv8-A) bootloader and kernel.
-> 
-> The aarch64 QEMU `virt-8.2` machine is currently the primary target, but support for real hardware is planned. 
-
-
+> A simple AArch64 (ARMv8-A) OS kernel
 
 ## Prerequisites
 

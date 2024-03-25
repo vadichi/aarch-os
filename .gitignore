@@ -1,5 +1,7 @@
 # Generated files
 target/
+*.fd
+*.img
 
 
 
