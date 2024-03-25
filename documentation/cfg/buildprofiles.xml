@@ -6,6 +6,11 @@
             <custom-favicons>icon.svg</custom-favicons>
 
             <noindex-content>false</noindex-content>
+
+            <algolia-id>V11J5YMOGX</algolia-id>
+            <algolia-index>Writerside</algolia-index>
+            <algolia-api-key>bf990df7e121e2979f081476d1ff926c</algolia-api-key>
+            <web-root>https://vadichi.github.io/aarch-os/</web-root>
         </variables>
     </build-profile>
 
