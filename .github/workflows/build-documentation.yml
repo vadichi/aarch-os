@@ -2,7 +2,9 @@ name: Build Writerside documentation
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
+    paths:
+        - 'documentation/**'
   workflow_dispatch:
 
 permissions:
@@ -10,8 +12,8 @@ permissions:
   pages: write
 
 env:
-  INSTANCE: 'documentation/aarch-os'
-  ARTIFACT: 'webHelpAARCH-OS2-all.zip'
+  INSTANCE: 'documentation/docs'
+  ARTIFACT: 'webHelpDOCS2-all.zip'
   DOCKER_VERSION: '233.14938'
 
 jobs:

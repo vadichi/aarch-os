@@ -2,7 +2,7 @@
 <!DOCTYPE instance-profile
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
-<instance-profile id="tutorial"
+<instance-profile id="docs"
                  name="aarch-os"
                  start-page="tutorial.md">
 
