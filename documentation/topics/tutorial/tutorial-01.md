@@ -67,7 +67,7 @@ tar -xvf qemu-efi-aarch64_2024.02-2_all.deb
 ```
 {prompt="$"}
 
-```
+```Generic
 x debian-binary
 x control.tar.xz
 x data.tar.xz
@@ -80,7 +80,7 @@ tar -xvzf data.tar.xz
 ```
 {prompt="$"}
 
-```
+```Generic
 x ./
 x ./usr/
 x ./usr/share/
@@ -136,7 +136,7 @@ qemu-system-aarch64 -M virt -cpu cortex-a53 -m 1024 -nographic \
 Running this command, you should see the EDK II version flash momentarily.
 Then, UEFI will attempt and fail to boot from a drive, triggering the network boot process:
 
-```
+```Generic
 >>Start PXE over IPv4.
 ```
 {collapsible="true" default-state="collapsed"}
@@ -156,12 +156,13 @@ Shell>
 Let's configure UEFI to skip network boot to avoid the excruciating wait in the future.
 
 First, dump the current boot order:
-```
+
+```Generic
 bcfg boot dump
 ```
 {prompt="Shell>"}
 
-```
+```Generic
 Option: 00. Variable: Boot0000
   Desc    - UiApp
   DevPath - Fv(64074AFE-340A-4BE6-94BA-91B5B4D0F71E)/FvFile(462CAA21-7614-4503-836E-8AB6F4662331)
@@ -193,12 +194,12 @@ Move the EFI Internal Shell (option 05) above all the network boot options
 and dump the boot order again to verify the result. `UiApp` should remain as the first option, 
 followed by `EFI Internal Shell`.
 
-```
+```Generic
 bcfg boot mv 05 01
 ```
 {prompt="Shell>"}
 
-```
+```Generic
 bcfg boot dump
 ```
 {prompt="Shell>"}
@@ -254,10 +255,9 @@ Configure the build system, specifying the target architecture and the toolchain
 {prompt="$"}
 
 > The build script makes use of `awk`, a text processing tool, which is installed on macOS by default.
-> However, it uses some GNU-specific functionality, not supported by the system `awk`. 
-> 
-> Instead, we will use `gawk`, GNU's version of `awk`.
-{style="warning"}
+> However, it uses some functionality only supported by [`gawk`](https://www.gnu.org/software/gawk/),
+> GNU's version of `awk`.
+> {style="warning"}
 
 
 This can be installed with Homebrew:
@@ -267,18 +267,18 @@ brew install gawk
 ```
 {prompt="$"}
 
-You will also need it to `$PATH`, with a higher priority than the system `awk`.
+You will also need to add it to `$PATH`, overriding the system`awk`:
 
 ```Bash
 export PATH="/opt/homebrew/opt/gawk/libexec/gnubin:$PATH"
 ```
 {prompt="$"}
 
-It might also be useful to this line it to your <path>~/.zprofile</path> or equivalent to have 
-`gawk` available in every shell.
+It might be useful to add this line to your <path>~/.zprofile</path> or equivalent to have
+`gawk` available in new shells by default.
 
 Finally, build and install the GRUB tools.
-Don't worry, this only installs some developer tools and will **not** affect the bootloader on your machine.
+Don't worry, will **not** affect the bootloader on your machine.
 
 ```Bash
 make && make install
@@ -287,8 +287,17 @@ make && make install
 
 
 ### Creating a bootable image
+
+QEMU has a Virtual FAT (VVFAT) driver, which can emulate a FAT-formatted drive using a regular directory
+on the host as backing storage.
+
 You should now have the necessary tools to create a bootable image.
 
-First, we will
+First, we need to write a
+[configuration file](https://www.gnu.org/software/grub/manual/grub/grub.html#Configuration) for GRUB.
+
+```Generic
+hi
+```
 
 

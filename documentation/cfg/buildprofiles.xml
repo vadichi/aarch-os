@@ -1,0 +1,29 @@
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <build-profile instance="docs">
+        <variables>
+            <header-logo>logo.svg</header-logo>
+            <custom-favicons>icon.svg</custom-favicons>
+
+            <noindex-content>false</noindex-content>
+        </variables>
+    </build-profile>
+
+    <variables>
+        <primary-color>metallic</primary-color>
+        <color-preset>contrast</color-preset>
+
+        <product-web-url>https://github.com/vadichi/aarch-os</product-web-url>
+    </variables>
+
+    <sitemap priority="0.5" change-frequency="monthly"/>
+
+    <footer>
+        <copyright>Vadim Chichikalyuk 2024</copyright>
+
+        <social type="email" href="chichikalyuk@gmail.com"/>
+
+        <link href="https://github.com/vadichi/aarch-os">GitHub</link>
+        <link href="https://www.apache.org/licenses/LICENSE-2.0.txt">Licensed under Apache 2.0</link>
+    </footer>
+</buildprofiles>
